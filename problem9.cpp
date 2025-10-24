@@ -1,10 +1,20 @@
-//
-// Created by Kamil Axmadeyev on 24/10/25.
-//
-// echo "# week9_lab2" >> README.md
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/reygen1/week9_lab2.git
-// git push -u origin main
+#include <iostream>
+using namespace std;
+int maxdig(int n) {
+    if (n == 0) {
+        return 0;
+    }
+    int dig=n%10;
+    int max=maxdig(n/10);
+    if (dig>max)
+        return dig;
+    else
+        return max;
+}
+int main() {
+    int n;
+    cin>>n;
+    cout<<maxdig(n)<<endl;
+    return 0;
+
+}
